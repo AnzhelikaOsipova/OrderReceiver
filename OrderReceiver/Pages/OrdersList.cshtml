@@ -1,0 +1,29 @@
+﻿@page
+@model OrdersListModel
+@{
+    ViewData["Title"] = "New order";
+}
+
+<h2>Список заказов</h2>
+<table cellpadding="10">
+    <tr><th>Номер</th>
+        <th>Город отправителя</th>
+        <th>Адрес отправителя</th>
+        <th>Город получателя</th>
+        <th>Адрес получателя</th>
+        <th>Вес груза</th>
+        <th>Дата забора груза</th>
+    </tr>
+    @foreach (OrderReceiver.Common.Models.View.Order item in Model.orders)
+    {
+        <tr>
+            <td align="center">@item.Number</td>
+            <td align="center">@item.SenderCity</td>
+            <td align="center">@item.SenderAddress</td>
+            <td align="center">@item.ReceiverCity</td>
+            <td align="center">@item.ReceiverAddress</td>
+            <td align="center">@item.Weight</td>
+            <td align="center">@item.CargoAcceptanceDate.ToString("dd.MM.yyyy")</td>
+        </tr>
+    }
+</table>

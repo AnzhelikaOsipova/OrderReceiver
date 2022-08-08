@@ -1,0 +1,34 @@
+﻿@page
+@model OrderReceiver.Pages.NewOrderModel
+@{
+    ViewData["Title"] = "New order";
+}
+
+<h2>Создать новый заказ: @Model.TestStr</h2>
+<form method="post" asp-antiforgery="true">
+    <p>
+        <label asp-for="NewOrder.SenderCity">Город отправителя</label><br />
+        <input type="text" asp-for="NewOrder.SenderCity" />
+    </p>
+    <p>
+        <label asp-for="NewOrder.SenderAddress">Адрес отправителя</label><br />
+        <input type="text" asp-for="NewOrder.SenderAddress" />
+    </p>
+    <p>
+        <label asp-for="NewOrder.ReceiverCity">Город получателя</label><br />
+        <input type="text" asp-for="NewOrder.ReceiverCity" />
+    </p>
+    <p>
+        <label asp-for="NewOrder.ReceiverAddress">Адрес получателя</label><br />
+        <input type="text" asp-for="NewOrder.ReceiverAddress" />
+    </p>
+    <p>
+        <label asp-for="NewOrder.Weight">Вес груза</label><br />
+        <input type="number" asp-for="NewOrder.Weight" />
+    </p>
+    <p>
+        <label asp-for="NewOrder.CargoAcceptanceDate">Дата забора груза</label><br />
+        <input type="date" asp-for="NewOrder.CargoAcceptanceDate" />
+    </p>
+    <input type="submit" value="Отправить" />
+</form>
